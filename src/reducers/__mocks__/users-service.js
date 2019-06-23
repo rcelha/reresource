@@ -13,4 +13,11 @@ export const service = {
       meta: { total: 2 },
     };
   },
+
+  postUser({ expand = false } = {}) {
+    const data = expand
+      ? { id: 100, name: 'New User From Service' }
+      : { id: 999 };
+    return { data };
+  },
 };

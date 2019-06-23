@@ -7,9 +7,9 @@ import {
 } from '../actions/types';
 import { StructuredResource } from './types';
 import {
-  RESOURCE_LIST,
-  RESOURCE_LIST_SUCCESS,
-  RESOURCE_LIST_FAILURE,
+  RESOURCE_ADD,
+  RESOURCE_ADD_SUCCESS,
+  RESOURCE_ADD_FAILURE,
 } from '../action-types';
 import { INITIAL_RESOURCE } from './initial-resource';
 
@@ -23,49 +23,43 @@ export function reducer(
       if (!action.type.startsWith('redux-resource/')) return;
 
       const resourceType = action.resourceType;
-      const resourceList = get(draft, resourceType, { ...INITIAL_RESOURCE });
-      set(draft, resourceType, resourceList);
+      const resource = get(draft, resourceType, { ...INITIAL_RESOURCE });
+      set(draft, resourceType, resource);
 
       switch (action.type) {
-        case RESOURCE_LIST:
-          Object.assign(resourceList, {
+        case RESOURCE_ADD:
+          Object.assign(resource, {
             loading: true,
             cached: false,
             initialized: true,
             error: null,
           });
-          if (!action.payload.resourceOptions.append) {
-            resourceList.data = null;
-          }
           return;
 
-        case RESOURCE_LIST_SUCCESS:
+        case RESOURCE_ADD_SUCCESS: {
           const successAction = action as ResourceSuccessAction;
-          Object.assign(resourceList, {
+          Object.assign(resource, {
             loading: false,
             cached: false,
             initialized: true,
             error: null,
+            data: {
+              ...successAction.payload.serviceParameters,
+              ...successAction.payload.data,
+            },
             meta: successAction.payload.meta,
           });
-          if (
-            successAction.payload.resourceOptions.append &&
-            Array.isArray(resourceList.data)
-          ) {
-            resourceList.data.push(...(successAction.payload.data as [object]));
-          } else {
-            resourceList.data = successAction.payload.data;
-          }
           return;
-
-        case RESOURCE_LIST_FAILURE:
+        }
+        case RESOURCE_ADD_FAILURE: {
           const failAction = action as ResourceFailureAction;
-          Object.assign(resourceList, {
+          Object.assign(resource, {
             loading: false,
             data: null,
             error: failAction.payload.error,
           });
           return;
+        }
         default:
           return;
       }

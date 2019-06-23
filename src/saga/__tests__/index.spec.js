@@ -63,4 +63,35 @@ describe('sagas', () => {
       });
     });
   });
+
+  describe('when a createResources action is dispatched', () => {
+    it('executes the service and dispatches a createResourceSuccess', async () => {
+      const action = actions.createResource('users', service.postUser, {
+        name: 'Cherry',
+      });
+      store.dispatch(action);
+
+      await sleep(0);
+      expect(store.getState().mutation.users).toMatchObject({
+        data: {
+          id: 999,
+          name: 'Cherry',
+        },
+      });
+    });
+
+    it('saves result to cache', async () => {
+      const action = actions.createResource('users', service.postUser, {
+        name: 'Cherry',
+      });
+      store.dispatch(action);
+
+      await sleep(0);
+      expect(store.getState().byId.users).toMatchObject({
+        '999': {
+          data: { id: 999, name: 'Cherry' },
+        },
+      });
+    });
+  });
 });

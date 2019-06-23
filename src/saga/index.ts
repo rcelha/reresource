@@ -3,6 +3,8 @@ import {
   RESOURCE_GET,
   RESOURCE_LIST_SUCCESS,
   RESOURCE_LIST,
+  RESOURCE_ADD,
+  RESOURCE_ADD_SUCCESS,
 } from '../action-types';
 import * as actions from '../actions';
 import { ResourceAction, ResourceSuccessAction } from '../actions/types';
@@ -68,7 +70,7 @@ export function* listResources(action: ResourceAction) {
 /**
  * @ignore
  */
-export function* sagaAddResourceToCache(action: ResourceSuccessAction) {
+export function* cacheResources(action: ResourceSuccessAction) {
   for (const i of action.payload.data as [{ id?: string | number }]) {
     if (!i.id) {
       continue;
@@ -88,8 +90,56 @@ export function* sagaAddResourceToCache(action: ResourceSuccessAction) {
   }
 }
 
+export function* cacheCreatedResource(action: ResourceSuccessAction) {
+  const { id } = action.payload.data as { id?: string | number };
+  if (!id) return;
+
+  const resourceOptions = {
+    ...action.payload.resourceOptions,
+    cached: true,
+  };
+  yield put(
+    actions.fetchResourceSuccess(
+      action.resourceType,
+      { data: { ...action.payload.serviceParameters, ...action.payload.data } },
+      { id },
+      resourceOptions
+    )
+  );
+}
+
+/**
+ * @ignore
+ */
+export function* createResource(action: ResourceAction) {
+  try {
+    const response = yield call(
+      action.payload.serviceFunction,
+      action.payload.serviceParameters
+    );
+    yield put(
+      actions.createResourceSuccess(
+        action.resourceType,
+        response,
+        action.payload.serviceParameters,
+        action.payload.resourceOptions
+      )
+    );
+  } catch (e) {
+    yield put(
+      actions.createResourceFailure(
+        action.resourceType,
+        e,
+        action.payload.serviceParameters,
+        action.payload.resourceOptions
+      )
+    );
+  }
+}
 export function* saga() {
   yield takeEvery(RESOURCE_GET, fetchResource);
   yield takeEvery(RESOURCE_LIST, listResources);
-  yield takeEvery(RESOURCE_LIST_SUCCESS, sagaAddResourceToCache);
+  yield takeEvery(RESOURCE_LIST_SUCCESS, cacheResources);
+  yield takeEvery(RESOURCE_ADD, createResource);
+  yield takeEvery(RESOURCE_ADD_SUCCESS, cacheCreatedResource);
 }

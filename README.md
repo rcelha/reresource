@@ -17,3 +17,4 @@
 - Delete resource
 - Support adding resource to list when getting a single record
 - Move cached data to another key (maybe using weekrefs)
+- Batched operations

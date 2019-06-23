@@ -11,17 +11,9 @@ import {
   ResourceFailureAction,
 } from '../actions/types';
 import { StructuredResource } from './types';
+import { INITIAL_RESOURCE } from './initial-resource';
 
 const set = (a: any, b: any, c: any) => setWith(a, b, c, Object); // tslint:disable-line:no-any
-
-const INITIAL_RESOURCE: StructuredResource = {
-  loading: false,
-  cached: false,
-  initialized: false,
-  data: null,
-  meta: null,
-  error: null,
-};
 
 export function reducer(
   state: { [k: string]: StructuredResource } = {},
@@ -44,10 +36,6 @@ export function reducer(
             initialized: true,
             error: null,
           });
-
-          if (!resource.cached) {
-            resource.data = null;
-          }
           return;
 
         case RESOURCE_GET_SUCCESS:
