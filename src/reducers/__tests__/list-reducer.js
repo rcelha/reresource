@@ -1,6 +1,6 @@
 import * as actions from '../../actions';
 import { reducer } from '../list-reducer';
-import { service } from '../__mocks__/users-service';
+import { service } from '../../test-helpers';
 
 describe('list-reducer', () => {
   describe('receiving a RESOURCE_LIST action', () => {

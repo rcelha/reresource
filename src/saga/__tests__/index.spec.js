@@ -1,6 +1,5 @@
 import * as actions from '../../actions';
-import { service } from '../../reducers/__mocks__/users-service';
-import { sleep, setupStore } from '../../test-helpers';
+import { sleep, setupStore, service } from '../../test-helpers';
 
 describe('sagas', () => {
   let store;
