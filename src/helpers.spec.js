@@ -1,4 +1,5 @@
-import { getFrom } from '../helpers';
+import { getFrom } from './helpers';
+
 describe('helpers', () => {
   describe('getFrom', () => {
     it('should return an non initialized resource', () => {

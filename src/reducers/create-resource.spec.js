@@ -1,6 +1,6 @@
-import * as actions from '../../actions';
-import { reducer } from '../create-reducer';
-import { service } from '../../test-helpers';
+import * as actions from '../actions';
+import { reducer } from './create-reducer';
+import { service } from '../test-helpers';
 
 describe('create-reducer', () => {
   const newUser = { name: 'New User' };
