@@ -1,20 +1,11 @@
-import { applyMiddleware, createStore } from 'redux';
-import createSagaMiddleware from 'redux-saga';
 import * as actions from '../../actions';
-import { saga } from '../index';
-import { reducer } from '../../reducers';
 import { service } from '../../reducers/__mocks__/users-service';
-
-const sleep = milliseconds => {
-  return new Promise(resolve => setTimeout(resolve, milliseconds));
-};
+import { sleep, setupStore } from '../../test-helpers';
 
 describe('sagas', () => {
   let store;
   beforeEach(() => {
-    const sagaMiddleware = createSagaMiddleware();
-    store = createStore(reducer, applyMiddleware(sagaMiddleware));
-    sagaMiddleware.run(saga);
+    store = setupStore();
   });
 
   describe('when a fetchResource action is dispatched', () => {
