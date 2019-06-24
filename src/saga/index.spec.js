@@ -84,4 +84,23 @@ describe('sagas', () => {
       });
     });
   });
+
+  describe('queries', () => {
+    it('has the different queries', async () => {
+      let action = actions.listResources('users', service.fetchUsers);
+      store.dispatch(action);
+      await sleep(0);
+      expect(store.getState().query).toMatchSnapshot();
+
+      action = actions.listResources('users', service.fetchUsers, { p: 1 });
+      store.dispatch(action);
+      await sleep(0);
+      expect(store.getState().query).toMatchSnapshot();
+
+      action = actions.listResources('users', service.fetchUsers, { p: 2 });
+      store.dispatch(action);
+      await sleep(0);
+      expect(store.getState().query).toMatchSnapshot();
+    });
+  });
 });

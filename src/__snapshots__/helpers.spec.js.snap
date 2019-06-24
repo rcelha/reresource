@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`helpers getQueries should combine multiple queries 1`] = `
+Object {
+  "cached": false,
+  "data": Array [
+    Object {
+      "id": 1,
+      "name": "Rodrigo",
+    },
+    Object {
+      "id": 2,
+      "name": "Fernanda",
+    },
+    Object {
+      "id": 21,
+      "name": "Liz",
+    },
+    Object {
+      "id": 22,
+      "name": "Edo",
+    },
+  ],
+  "error": null,
+  "initialized": true,
+  "loading": false,
+  "meta": Object {},
+}
+`;
+
+exports[`helpers getQueries should extract a single query 1`] = `
+Object {
+  "cached": false,
+  "data": Array [
+    Object {
+      "id": 1,
+      "name": "Rodrigo",
+    },
+    Object {
+      "id": 2,
+      "name": "Fernanda",
+    },
+  ],
+  "error": null,
+  "initialized": true,
+  "loading": false,
+  "meta": Object {},
+}
+`;

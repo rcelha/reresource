@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sagas queries has the different queries 1`] = `
+Object {
+  "users": Object {
+    "{}": Object {
+      "cached": false,
+      "data": Array [
+        Object {
+          "id": 1,
+          "name": "Rodrigo",
+        },
+        Object {
+          "id": 2,
+          "name": "Fernanda",
+        },
+      ],
+      "error": null,
+      "initialized": true,
+      "loading": false,
+      "meta": Object {
+        "total": 2,
+      },
+    },
+  },
+}
+`;
+
+exports[`sagas queries has the different queries 2`] = `
+Object {
+  "users": Object {
+    "{\\"p\\":1}": Object {
+      "cached": false,
+      "data": Array [
+        Object {
+          "id": 11,
+          "name": "Cherry",
+        },
+        Object {
+          "id": 12,
+          "name": "Tyrion",
+        },
+      ],
+      "error": null,
+      "initialized": true,
+      "loading": false,
+      "meta": Object {
+        "total": 2,
+      },
+    },
+    "{}": Object {
+      "cached": false,
+      "data": Array [
+        Object {
+          "id": 1,
+          "name": "Rodrigo",
+        },
+        Object {
+          "id": 2,
+          "name": "Fernanda",
+        },
+      ],
+      "error": null,
+      "initialized": true,
+      "loading": false,
+      "meta": Object {
+        "total": 2,
+      },
+    },
+  },
+}
+`;
+
+exports[`sagas queries has the different queries 3`] = `
+Object {
+  "users": Object {
+    "{\\"p\\":1}": Object {
+      "cached": false,
+      "data": Array [
+        Object {
+          "id": 11,
+          "name": "Cherry",
+        },
+        Object {
+          "id": 12,
+          "name": "Tyrion",
+        },
+      ],
+      "error": null,
+      "initialized": true,
+      "loading": false,
+      "meta": Object {
+        "total": 2,
+      },
+    },
+    "{\\"p\\":2}": Object {
+      "cached": false,
+      "data": Array [
+        Object {
+          "id": 21,
+          "name": "Liz",
+        },
+        Object {
+          "id": 22,
+          "name": "Edo",
+        },
+      ],
+      "error": null,
+      "initialized": true,
+      "loading": false,
+      "meta": Object {
+        "total": 2,
+      },
+    },
+    "{}": Object {
+      "cached": false,
+      "data": Array [
+        Object {
+          "id": 1,
+          "name": "Rodrigo",
+        },
+        Object {
+          "id": 2,
+          "name": "Fernanda",
+        },
+      ],
+      "error": null,
+      "initialized": true,
+      "loading": false,
+      "meta": Object {
+        "total": 2,
+      },
+    },
+  },
+}
+`;

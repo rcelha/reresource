@@ -22,9 +22,15 @@ export const service = {
     return { data };
   },
 
-  fetchUsers() {
+  fetchUsers({ p = 0 } = {}) {
+    const data = [
+      [{ id: 1, name: 'Rodrigo' }, { id: 2, name: 'Fernanda' }],
+      [{ id: 11, name: 'Cherry' }, { id: 12, name: 'Tyrion' }],
+      [{ id: 21, name: 'Liz' }, { id: 22, name: 'Edo' }],
+    ];
+
     return {
-      data: [{ id: 1, name: 'Rodrigo' }, { id: 2, name: 'Fernanda' }],
+      data: data[p],
       meta: { total: 2 },
     };
   },

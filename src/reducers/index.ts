@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import { reducer as fetchReducer } from './fetch-reducer';
-import { reducer as listReducer } from './list-reducer';
-import { reducer as createReducer } from './create-reducer';
+import { reducer as byId } from './fetch-reducer';
+import { reducer as list } from './list-reducer';
+import { reducer as query } from './query-reducer';
+import { reducer as mutation } from './create-reducer';
 
 export const reducer = combineReducers({
-  byId: fetchReducer,
-  list: listReducer,
-  mutation: createReducer,
+  byId,
+  list,
+  query,
+  mutation,
 });
