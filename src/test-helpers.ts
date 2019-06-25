@@ -1,6 +1,6 @@
 import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { keyBy } from 'lodash';
+import { keyBy, chunk, values } from 'lodash';
 import { saga } from './index';
 import { reducer } from './reducers';
 
@@ -15,20 +15,25 @@ export const setupStore = () => {
   return store;
 };
 
+export const USERS = keyBy(
+  [
+    { id: 1, name: 'Rodrigo' },
+    { id: 2, name: 'Fernanda' },
+    { id: 11, name: 'Cherry' },
+    { id: 12, name: 'Tyrion' },
+    { id: 21, name: 'Liz' },
+    { id: 22, name: 'Edo' },
+  ],
+  'id'
+);
+
 export const service = {
   fetchUser({ id }: { id: number }) {
-    const users = service.fetchUsers();
-    const data = keyBy(users.data, 'id')[id];
-    return { data };
+    return { data: USERS[id] };
   },
 
   fetchUsers({ p = 0 } = {}) {
-    const data = [
-      [{ id: 1, name: 'Rodrigo' }, { id: 2, name: 'Fernanda' }],
-      [{ id: 11, name: 'Cherry' }, { id: 12, name: 'Tyrion' }],
-      [{ id: 21, name: 'Liz' }, { id: 22, name: 'Edo' }],
-    ];
-
+    const data = chunk(values(USERS), 2);
     return {
       data: data[p],
       meta: { total: 2 },
