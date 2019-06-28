@@ -1,0 +1,43 @@
+{
+  "name": "redux-resource",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn run type-check -- --watch",
+    "build": "yarn run build:types && yarn run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir build  --extensions \".ts,.tsx\" --source-maps inline",
+    "docs": "typedoc",
+    "test": "jest",
+    "check": "gts check",
+    "clean": "gts clean",
+    "fix": "gts fix",
+    "posttest": "yarn run check"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/jest": "^24.0.13",
+    "babel-jest": "^24.8.0",
+    "gts": "^1.0.0",
+    "jest": "^24.8.0",
+    "typedoc": "^0.14.2",
+    "typedoc-plugin-markdown": "^1.2.1",
+    "typescript": "^3.5.1"
+  },
+  "dependencies": {
+    "immer": "3.1.2",
+    "lodash": "^4.17.11",
+    "redux-saga": "^1.0.2"
+  },
+  "peerDependencies": {
+    "redux": "^4.0.1"
+  }
+}

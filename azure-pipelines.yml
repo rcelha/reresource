@@ -1,0 +1,27 @@
+trigger:
+- master
+
+pr:
+- master
+- releases/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- script: yarn --frozen-lockfile
+  displayName: 'Install deps'
+
+- script: yarn test --all
+  displayName: 'Test'
+
+- script: yarn docs
+  displayName: 'Build docs'
+
+- script: yarn build
+  displayName: 'Build'
