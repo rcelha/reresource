@@ -24,7 +24,7 @@
 
 **● payload**: *`object`*
 
-*Defined in [actions/types.ts:45](https://github.com/rcelha/redux-resource/blob/1562510/src/actions/types.ts#L45)*
+*Defined in [actions/types.ts:45](https://github.com/rcelha/redux-resource/blob/2e19365/src/actions/types.ts#L45)*
 
 #### Type declaration
 
@@ -41,7 +41,7 @@ ___
 
 **● resourceType**: *`string`*
 
-*Defined in [actions/types.ts:44](https://github.com/rcelha/redux-resource/blob/1562510/src/actions/types.ts#L44)*
+*Defined in [actions/types.ts:44](https://github.com/rcelha/redux-resource/blob/2e19365/src/actions/types.ts#L44)*
 
 ___
 <a id="type"></a>
@@ -50,7 +50,7 @@ ___
 
 **● type**: *`string`*
 
-*Defined in [actions/types.ts:43](https://github.com/rcelha/redux-resource/blob/1562510/src/actions/types.ts#L43)*
+*Defined in [actions/types.ts:43](https://github.com/rcelha/redux-resource/blob/2e19365/src/actions/types.ts#L43)*
 
 ___
 

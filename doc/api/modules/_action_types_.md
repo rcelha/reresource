@@ -32,7 +32,7 @@
 
 **● RESOURCE_ADD**: *"redux-resource/RESOURCE_ADD"* = "redux-resource/RESOURCE_ADD"
 
-*Defined in [action-types.ts:9](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L9)*
+*Defined in [action-types.ts:9](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L9)*
 
 ___
 <a id="resource_add_failure"></a>
@@ -41,7 +41,7 @@ ___
 
 **● RESOURCE_ADD_FAILURE**: *"redux-resource/RESOURCE_ADD_FAILURE"* = "redux-resource/RESOURCE_ADD_FAILURE"
 
-*Defined in [action-types.ts:11](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L11)*
+*Defined in [action-types.ts:11](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L11)*
 
 ___
 <a id="resource_add_success"></a>
@@ -50,7 +50,7 @@ ___
 
 **● RESOURCE_ADD_SUCCESS**: *"redux-resource/RESOURCE_ADD_SUCCESS"* = "redux-resource/RESOURCE_ADD_SUCCESS"
 
-*Defined in [action-types.ts:10](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L10)*
+*Defined in [action-types.ts:10](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L10)*
 
 ___
 <a id="resource_del"></a>
@@ -59,7 +59,7 @@ ___
 
 **● RESOURCE_DEL**: *"redux-resource/RESOURCE_DEL"* = "redux-resource/RESOURCE_DEL"
 
-*Defined in [action-types.ts:13](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L13)*
+*Defined in [action-types.ts:13](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L13)*
 
 ___
 <a id="resource_del_failure"></a>
@@ -68,7 +68,7 @@ ___
 
 **● RESOURCE_DEL_FAILURE**: *"redux-resource/RESOURCE_DEL_FAILURE"* = "redux-resource/RESOURCE_DEL_FAILURE"
 
-*Defined in [action-types.ts:15](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L15)*
+*Defined in [action-types.ts:15](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L15)*
 
 ___
 <a id="resource_del_success"></a>
@@ -77,7 +77,7 @@ ___
 
 **● RESOURCE_DEL_SUCCESS**: *"redux-resource/RESOURCE_DEL_SUCCESS"* = "redux-resource/RESOURCE_DEL_SUCCESS"
 
-*Defined in [action-types.ts:14](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L14)*
+*Defined in [action-types.ts:14](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L14)*
 
 ___
 <a id="resource_get"></a>
@@ -86,7 +86,7 @@ ___
 
 **● RESOURCE_GET**: *"redux-resource/RESOURCE_GET"* = "redux-resource/RESOURCE_GET"
 
-*Defined in [action-types.ts:1](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L1)*
+*Defined in [action-types.ts:1](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L1)*
 
 ___
 <a id="resource_get_failure"></a>
@@ -95,7 +95,7 @@ ___
 
 **● RESOURCE_GET_FAILURE**: *"redux-resource/RESOURCE_GET_FAILURE"* = "redux-resource/RESOURCE_GET_FAILURE"
 
-*Defined in [action-types.ts:3](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L3)*
+*Defined in [action-types.ts:3](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L3)*
 
 ___
 <a id="resource_get_success"></a>
@@ -104,7 +104,7 @@ ___
 
 **● RESOURCE_GET_SUCCESS**: *"redux-resource/RESOURCE_GET_SUCCESS"* = "redux-resource/RESOURCE_GET_SUCCESS"
 
-*Defined in [action-types.ts:2](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L2)*
+*Defined in [action-types.ts:2](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L2)*
 
 ___
 <a id="resource_list"></a>
@@ -113,7 +113,7 @@ ___
 
 **● RESOURCE_LIST**: *"redux-resource/RESOURCE_LIST"* = "redux-resource/RESOURCE_LIST"
 
-*Defined in [action-types.ts:5](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L5)*
+*Defined in [action-types.ts:5](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L5)*
 
 ___
 <a id="resource_list_failure"></a>
@@ -122,7 +122,7 @@ ___
 
 **● RESOURCE_LIST_FAILURE**: *"redux-resource/RESOURCE_LIST_FAILURE"* = "redux-resource/RESOURCE_LIST_FAILURE"
 
-*Defined in [action-types.ts:7](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L7)*
+*Defined in [action-types.ts:7](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L7)*
 
 ___
 <a id="resource_list_success"></a>
@@ -131,7 +131,7 @@ ___
 
 **● RESOURCE_LIST_SUCCESS**: *"redux-resource/RESOURCE_LIST_SUCCESS"* = "redux-resource/RESOURCE_LIST_SUCCESS"
 
-*Defined in [action-types.ts:6](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L6)*
+*Defined in [action-types.ts:6](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L6)*
 
 ___
 <a id="resource_update"></a>
@@ -140,7 +140,7 @@ ___
 
 **● RESOURCE_UPDATE**: *"redux-resource/RESOURCE_UPDATE"* = "redux-resource/RESOURCE_UPDATE"
 
-*Defined in [action-types.ts:17](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L17)*
+*Defined in [action-types.ts:17](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L17)*
 
 ___
 <a id="resource_update_failure"></a>
@@ -149,7 +149,7 @@ ___
 
 **● RESOURCE_UPDATE_FAILURE**: *"redux-resource/RESOURCE_UPDATE_FAILURE"* = "redux-resource/RESOURCE_UPDATE_FAILURE"
 
-*Defined in [action-types.ts:19](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L19)*
+*Defined in [action-types.ts:19](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L19)*
 
 ___
 <a id="resource_update_success"></a>
@@ -158,7 +158,7 @@ ___
 
 **● RESOURCE_UPDATE_SUCCESS**: *"redux-resource/RESOURCE_UPDATE_SUCCESS"* = "redux-resource/RESOURCE_UPDATE_SUCCESS"
 
-*Defined in [action-types.ts:18](https://github.com/rcelha/redux-resource/blob/1562510/src/action-types.ts#L18)*
+*Defined in [action-types.ts:18](https://github.com/rcelha/redux-resource/blob/2e19365/src/action-types.ts#L18)*
 
 ___
 

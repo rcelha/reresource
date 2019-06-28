@@ -17,11 +17,13 @@
 ### `<Const>` reducer
 
 **● reducer**: *`function`* =  combineReducers({
-  byId: fetchReducer,
-  list: listReducer,
+  byId,
+  list,
+  query,
+  mutation,
 })
 
-*Defined in [reducers/index.ts:5](https://github.com/rcelha/redux-resource/blob/1562510/src/reducers/index.ts#L5)*
+*Defined in [reducers/index.ts:7](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/index.ts#L7)*
 
 #### Type declaration
 ▸(state: *`S` \| `undefined`*, action: *`A`*): `S`

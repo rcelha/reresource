@@ -24,7 +24,7 @@
 
 **● append**: *`undefined` \| `false` \| `true`*
 
-*Defined in [actions/types.ts:11](https://github.com/rcelha/redux-resource/blob/1562510/src/actions/types.ts#L11)*
+*Defined in [actions/types.ts:11](https://github.com/rcelha/redux-resource/blob/2e19365/src/actions/types.ts#L11)*
 
 ___
 <a id="cached"></a>
@@ -33,7 +33,7 @@ ___
 
 **● cached**: *`undefined` \| `false` \| `true`*
 
-*Defined in [actions/types.ts:13](https://github.com/rcelha/redux-resource/blob/1562510/src/actions/types.ts#L13)*
+*Defined in [actions/types.ts:13](https://github.com/rcelha/redux-resource/blob/2e19365/src/actions/types.ts#L13)*
 
 ___
 <a id="ignorecache"></a>
@@ -42,7 +42,7 @@ ___
 
 **● ignoreCache**: *`undefined` \| `false` \| `true`*
 
-*Defined in [actions/types.ts:12](https://github.com/rcelha/redux-resource/blob/1562510/src/actions/types.ts#L12)*
+*Defined in [actions/types.ts:12](https://github.com/rcelha/redux-resource/blob/2e19365/src/actions/types.ts#L12)*
 
 ___
 

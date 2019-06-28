@@ -27,7 +27,7 @@
 
 **● cached**: *`boolean`*
 
-*Defined in [reducers/types.ts:3](https://github.com/rcelha/redux-resource/blob/1562510/src/reducers/types.ts#L3)*
+*Defined in [reducers/types.ts:3](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/types.ts#L3)*
 
 ___
 <a id="data"></a>
@@ -36,7 +36,7 @@ ___
 
 **● data**: *`object` \| `null`*
 
-*Defined in [reducers/types.ts:5](https://github.com/rcelha/redux-resource/blob/1562510/src/reducers/types.ts#L5)*
+*Defined in [reducers/types.ts:5](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/types.ts#L5)*
 
 ___
 <a id="error"></a>
@@ -45,7 +45,7 @@ ___
 
 **● error**: *`Error` \| `null`*
 
-*Defined in [reducers/types.ts:7](https://github.com/rcelha/redux-resource/blob/1562510/src/reducers/types.ts#L7)*
+*Defined in [reducers/types.ts:7](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/types.ts#L7)*
 
 ___
 <a id="initialized"></a>
@@ -54,7 +54,7 @@ ___
 
 **● initialized**: *`boolean`*
 
-*Defined in [reducers/types.ts:4](https://github.com/rcelha/redux-resource/blob/1562510/src/reducers/types.ts#L4)*
+*Defined in [reducers/types.ts:4](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/types.ts#L4)*
 
 ___
 <a id="loading"></a>
@@ -63,7 +63,7 @@ ___
 
 **● loading**: *`boolean`*
 
-*Defined in [reducers/types.ts:2](https://github.com/rcelha/redux-resource/blob/1562510/src/reducers/types.ts#L2)*
+*Defined in [reducers/types.ts:2](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/types.ts#L2)*
 
 ___
 <a id="meta"></a>
@@ -72,7 +72,7 @@ ___
 
 **● meta**: *`object` \| `null`*
 
-*Defined in [reducers/types.ts:6](https://github.com/rcelha/redux-resource/blob/1562510/src/reducers/types.ts#L6)*
+*Defined in [reducers/types.ts:6](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/types.ts#L6)*
 
 ___
 
