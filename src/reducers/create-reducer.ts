@@ -20,7 +20,7 @@ export function reducer(
   return produce(
     state,
     (draft: { [k: string]: { [k: string]: StructuredResource } }): void => {
-      if (!action.type.startsWith('redux-resource/')) return;
+      if (!action.type.startsWith('reresource/')) return;
 
       const resourceType = action.resourceType;
       const resource = get(draft, resourceType, { ...INITIAL_RESOURCE });

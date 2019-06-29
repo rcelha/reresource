@@ -1,4 +1,4 @@
-[redux-resource](../README.md) > ["reducers/fetch-reducer"](../modules/_reducers_fetch_reducer_.md)
+[reresource](../README.md) > ["reducers/fetch-reducer"](../modules/_reducers_fetch_reducer_.md)
 
 # External module: "reducers/fetch-reducer"
 
@@ -19,7 +19,7 @@
 
 ▸ **reducer**(state?: *`object`*, action: *[ResourceAction](../interfaces/_actions_types_.resourceaction.md) \| [ResourceSuccessAction](../interfaces/_actions_types_.resourcesuccessaction.md) \| [ResourceFailureAction](../interfaces/_actions_types_.resourcefailureaction.md)*): `object`
 
-*Defined in [reducers/fetch-reducer.ts:18](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/fetch-reducer.ts#L18)*
+*Defined in [reducers/fetch-reducer.ts:18](https://github.com/rcelha/reresource/blob/2e19365/src/reducers/fetch-reducer.ts#L18)*
 
 **Parameters:**
 
@@ -37,7 +37,7 @@ ___
 
 ▸ **set**(a: *`any`*, b: *`any`*, c: *`any`*): `any`
 
-*Defined in [reducers/fetch-reducer.ts:16](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/fetch-reducer.ts#L16)*
+*Defined in [reducers/fetch-reducer.ts:16](https://github.com/rcelha/reresource/blob/2e19365/src/reducers/fetch-reducer.ts#L16)*
 
 **Parameters:**
 

@@ -1,4 +1,4 @@
-[redux-resource](../README.md) > ["actions/types"](../modules/_actions_types_.md) > [ServiceOptions](../interfaces/_actions_types_.serviceoptions.md)
+[reresource](../README.md) > ["actions/types"](../modules/_actions_types_.md) > [ServiceOptions](../interfaces/_actions_types_.serviceoptions.md)
 
 # Interface: ServiceOptions
 
@@ -25,7 +25,7 @@
 
 **● id**: *`string` \| `number`*
 
-*Defined in [actions/types.ts:17](https://github.com/rcelha/redux-resource/blob/2e19365/src/actions/types.ts#L17)*
+*Defined in [actions/types.ts:17](https://github.com/rcelha/reresource/blob/2e19365/src/actions/types.ts#L17)*
 
 ___
 

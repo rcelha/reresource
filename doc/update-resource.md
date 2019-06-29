@@ -2,7 +2,7 @@
 
 ```jsx
 import React from 'react';
-import { getResource, fetchResource, updateResource } from 'redux-resource';
+import { getResource, fetchResource, updateResource } from 'reresource';
 
 class UserRepr extends React.Component {
   state = {

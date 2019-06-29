@@ -2,7 +2,7 @@
 
 ```jsx
 import React from 'react';
-import { getResource, fetchResourceList } from 'redux-resource';
+import { getResource, fetchResourceList } from 'reresource';
 
 class UserList extends React.Component {
   componentDidMount() {
@@ -48,7 +48,7 @@ So when some one click on the details below, it doesn't need to go to the backen
 
 ```jsx
 import React from 'react';
-import { getResource, fetchResourceList } from 'redux-resource';
+import { getResource, fetchResourceList } from 'reresource';
 
 class UserList extends React.Component {
   componentDidMount() {
@@ -89,7 +89,7 @@ const mapDispatchToProps = {
 };
 ```
 
-Again, we can inform `redux-resource` to skip caching
+Again, we can inform `reresource` to skip caching
 
 ```javascript
 this.props.fetchResourceList('users', service.fetchAllUsers, null, { ignoreCache: true });

@@ -1,4 +1,4 @@
-[redux-resource](../README.md) > ["actions/list-resources"](../modules/_actions_list_resources_.md)
+[reresource](../README.md) > ["actions/list-resources"](../modules/_actions_list_resources_.md)
 
 # External module: "actions/list-resources"
 
@@ -18,7 +18,7 @@
 
 ▸ **listResources**(resourceType: *`string`*, serviceFunction: *[ServiceFunction](_actions_types_.md#servicefunction)*, serviceParameters?: *[ServiceOptions](../interfaces/_actions_types_.serviceoptions.md)*, resourceOptions?: *[ResourceOptions](../interfaces/_actions_types_.resourceoptions.md)*): [ResourceAction](../interfaces/_actions_types_.resourceaction.md)
 
-*Defined in [actions/list-resources.ts:12](https://github.com/rcelha/redux-resource/blob/2e19365/src/actions/list-resources.ts#L12)*
+*Defined in [actions/list-resources.ts:12](https://github.com/rcelha/reresource/blob/2e19365/src/actions/list-resources.ts#L12)*
 
 **Parameters:**
 

@@ -1,4 +1,4 @@
-[redux-resource](../README.md) > ["helpers"](../modules/_helpers_.md)
+[reresource](../README.md) > ["helpers"](../modules/_helpers_.md)
 
 # External module: "helpers"
 
@@ -19,7 +19,7 @@
 
 ▸ **getFrom**(state: *`object`*, resource: *`string`*, id?: *`string` \| `number`*): [StructuredResource](../interfaces/_reducers_types_.structuredresource.md)
 
-*Defined in [helpers.ts:11](https://github.com/rcelha/redux-resource/blob/2e19365/src/helpers.ts#L11)*
+*Defined in [helpers.ts:11](https://github.com/rcelha/reresource/blob/2e19365/src/helpers.ts#L11)*
 
 Get a resource from the store
 
@@ -46,7 +46,7 @@ ___
 
 ▸ **getQueries**(state: *`object`*, resource: *`string`*, queries?: *[`object`]*): [StructuredResource](../interfaces/_reducers_types_.structuredresource.md)
 
-*Defined in [helpers.ts:33](https://github.com/rcelha/redux-resource/blob/2e19365/src/helpers.ts#L33)*
+*Defined in [helpers.ts:33](https://github.com/rcelha/reresource/blob/2e19365/src/helpers.ts#L33)*
 
 Get one or more queries
 

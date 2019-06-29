@@ -1,13 +1,18 @@
 {
-  "name": "redux-resource",
-  "version": "1.0.0",
+  "name": "reresource",
+  "version": "1.0.0-rc.4",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rcelha/reresource.git"
+  },
   "scripts": {
+    "prepublishOnly": "yarn build",
     "type-check": "tsc --noEmit",
-    "type-check:watch": "yarn run type-check -- --watch",
-    "build": "yarn run build:types && yarn run build:js",
+    "type-check:watch": "yarn type-check -- --watch",
+    "build": "yarn build:types && yarn build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir build  --extensions \".ts,.tsx\" --source-maps inline",
     "docs": "typedoc",
@@ -15,7 +20,7 @@
     "check": "gts check",
     "clean": "gts clean",
     "fix": "gts fix",
-    "posttest": "yarn run check"
+    "posttest": "yarn check"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

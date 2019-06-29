@@ -1,4 +1,4 @@
-[redux-resource](../README.md) > ["reducers/initial-resource"](../modules/_reducers_initial_resource_.md)
+[reresource](../README.md) > ["reducers/initial-resource"](../modules/_reducers_initial_resource_.md)
 
 # External module: "reducers/initial-resource"
 
@@ -18,7 +18,7 @@
 
 **INITIAL_RESOURCE**: *`object`*
 
-*Defined in [reducers/initial-resource.ts:3](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/initial-resource.ts#L3)*
+*Defined in [reducers/initial-resource.ts:3](https://github.com/rcelha/reresource/blob/2e19365/src/reducers/initial-resource.ts#L3)*
 
 <a id="initial_resource.cached"></a>
 
@@ -26,7 +26,7 @@
 
 **● cached**: *`false`* = false
 
-*Defined in [reducers/initial-resource.ts:5](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/initial-resource.ts#L5)*
+*Defined in [reducers/initial-resource.ts:5](https://github.com/rcelha/reresource/blob/2e19365/src/reducers/initial-resource.ts#L5)*
 
 ___
 <a id="initial_resource.data"></a>
@@ -35,7 +35,7 @@ ___
 
 **● data**: *`null`* =  null
 
-*Defined in [reducers/initial-resource.ts:7](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/initial-resource.ts#L7)*
+*Defined in [reducers/initial-resource.ts:7](https://github.com/rcelha/reresource/blob/2e19365/src/reducers/initial-resource.ts#L7)*
 
 ___
 <a id="initial_resource.error"></a>
@@ -44,7 +44,7 @@ ___
 
 **● error**: *`null`* =  null
 
-*Defined in [reducers/initial-resource.ts:9](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/initial-resource.ts#L9)*
+*Defined in [reducers/initial-resource.ts:9](https://github.com/rcelha/reresource/blob/2e19365/src/reducers/initial-resource.ts#L9)*
 
 ___
 <a id="initial_resource.initialized"></a>
@@ -53,7 +53,7 @@ ___
 
 **● initialized**: *`false`* = false
 
-*Defined in [reducers/initial-resource.ts:6](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/initial-resource.ts#L6)*
+*Defined in [reducers/initial-resource.ts:6](https://github.com/rcelha/reresource/blob/2e19365/src/reducers/initial-resource.ts#L6)*
 
 ___
 <a id="initial_resource.loading"></a>
@@ -62,7 +62,7 @@ ___
 
 **● loading**: *`false`* = false
 
-*Defined in [reducers/initial-resource.ts:4](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/initial-resource.ts#L4)*
+*Defined in [reducers/initial-resource.ts:4](https://github.com/rcelha/reresource/blob/2e19365/src/reducers/initial-resource.ts#L4)*
 
 ___
 <a id="initial_resource.meta"></a>
@@ -71,7 +71,7 @@ ___
 
 **● meta**: *`null`* =  null
 
-*Defined in [reducers/initial-resource.ts:8](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/initial-resource.ts#L8)*
+*Defined in [reducers/initial-resource.ts:8](https://github.com/rcelha/reresource/blob/2e19365/src/reducers/initial-resource.ts#L8)*
 
 ___
 

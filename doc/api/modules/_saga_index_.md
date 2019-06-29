@@ -1,4 +1,4 @@
-[redux-resource](../README.md) > ["saga/index"](../modules/_saga_index_.md)
+[reresource](../README.md) > ["saga/index"](../modules/_saga_index_.md)
 
 # External module: "saga/index"
 
@@ -20,7 +20,7 @@
 
 ▸ **cacheCreatedResource**(action: *[ResourceSuccessAction](../interfaces/_actions_types_.resourcesuccessaction.md)*): `IterableIterator`<`SimpleEffect`<"PUT", `PutEffectDescriptor`<[ResourceSuccessAction](../interfaces/_actions_types_.resourcesuccessaction.md)>>>
 
-*Defined in [saga/index.ts:93](https://github.com/rcelha/redux-resource/blob/2e19365/src/saga/index.ts#L93)*
+*Defined in [saga/index.ts:93](https://github.com/rcelha/reresource/blob/2e19365/src/saga/index.ts#L93)*
 
 **Parameters:**
 
@@ -37,7 +37,7 @@ ___
 
 ▸ **listResources**(action: *[ResourceAction](../interfaces/_actions_types_.resourceaction.md)*): `IterableIterator`<`SimpleEffect`<"CALL", `CallEffectDescriptor`> \| `SimpleEffect`<"PUT", `PutEffectDescriptor`<[ResourceSuccessAction](../interfaces/_actions_types_.resourcesuccessaction.md)>> \| `SimpleEffect`<"PUT", `PutEffectDescriptor`<[ResourceFailureAction](../interfaces/_actions_types_.resourcefailureaction.md)>>>
 
-*Defined in [saga/index.ts:44](https://github.com/rcelha/redux-resource/blob/2e19365/src/saga/index.ts#L44)*
+*Defined in [saga/index.ts:44](https://github.com/rcelha/reresource/blob/2e19365/src/saga/index.ts#L44)*
 
 *__todo__*: Avoid fetching the same list multiple times
 
@@ -56,7 +56,7 @@ ___
 
 ▸ **saga**(): `IterableIterator`<`SimpleEffect`<"FORK", `ForkEffectDescriptor`>>
 
-*Defined in [saga/index.ts:139](https://github.com/rcelha/redux-resource/blob/2e19365/src/saga/index.ts#L139)*
+*Defined in [saga/index.ts:139](https://github.com/rcelha/reresource/blob/2e19365/src/saga/index.ts#L139)*
 
 **Returns:** `IterableIterator`<`SimpleEffect`<"FORK", `ForkEffectDescriptor`>>
 

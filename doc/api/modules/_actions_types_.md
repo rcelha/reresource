@@ -1,4 +1,4 @@
-[redux-resource](../README.md) > ["actions/types"](../modules/_actions_types_.md)
+[reresource](../README.md) > ["actions/types"](../modules/_actions_types_.md)
 
 # External module: "actions/types"
 
@@ -27,7 +27,7 @@
 
 **Ƭ ServiceFunction**: *`function`*
 
-*Defined in [actions/types.ts:6](https://github.com/rcelha/redux-resource/blob/2e19365/src/actions/types.ts#L6)*
+*Defined in [actions/types.ts:6](https://github.com/rcelha/reresource/blob/2e19365/src/actions/types.ts#L6)*
 
 #### Type declaration
 ▸(serviceParameters: *[ServiceOptions](../interfaces/_actions_types_.serviceoptions.md)*): `Promise`<[ServiceReturn](../interfaces/_actions_types_.servicereturn.md)>

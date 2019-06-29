@@ -1,4 +1,4 @@
-[redux-resource](../README.md) > ["reducers/types"](../modules/_reducers_types_.md)
+[reresource](../README.md) > ["reducers/types"](../modules/_reducers_types_.md)
 
 # External module: "reducers/types"
 

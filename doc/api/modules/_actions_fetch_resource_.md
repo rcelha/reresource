@@ -1,4 +1,4 @@
-[redux-resource](../README.md) > ["actions/fetch-resource"](../modules/_actions_fetch_resource_.md)
+[reresource](../README.md) > ["actions/fetch-resource"](../modules/_actions_fetch_resource_.md)
 
 # External module: "actions/fetch-resource"
 
@@ -18,7 +18,7 @@
 
 ▸ **fetchResource**(resourceType: *`string`*, serviceFunction: *[ServiceFunction](_actions_types_.md#servicefunction)*, serviceParameters: *`string` \| `number` \| [ServiceOptions](../interfaces/_actions_types_.serviceoptions.md)*, resourceOptions?: *[ResourceOptions](../interfaces/_actions_types_.resourceoptions.md)*): [ResourceAction](../interfaces/_actions_types_.resourceaction.md)
 
-*Defined in [actions/fetch-resource.ts:16](https://github.com/rcelha/redux-resource/blob/2e19365/src/actions/fetch-resource.ts#L16)*
+*Defined in [actions/fetch-resource.ts:16](https://github.com/rcelha/reresource/blob/2e19365/src/actions/fetch-resource.ts#L16)*
 
 Triggers the beginning of the resource fetching flow
 

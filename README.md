@@ -1,4 +1,4 @@
-# redux-resource
+# reresource
 
 1. ~Basic concepts~
 1. [Data-flow](/doc/data-flow.md)

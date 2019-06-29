@@ -1,4 +1,4 @@
-[redux-resource](../README.md) > ["index"](../modules/_index_.md)
+[reresource](../README.md) > ["index"](../modules/_index_.md)
 
 # External module: "index"
 

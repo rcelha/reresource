@@ -1,4 +1,4 @@
-[redux-resource](../README.md) > ["reducers/index"](../modules/_reducers_index_.md)
+[reresource](../README.md) > ["reducers/index"](../modules/_reducers_index_.md)
 
 # External module: "reducers/index"
 
@@ -23,7 +23,7 @@
   mutation,
 })
 
-*Defined in [reducers/index.ts:7](https://github.com/rcelha/redux-resource/blob/2e19365/src/reducers/index.ts#L7)*
+*Defined in [reducers/index.ts:7](https://github.com/rcelha/reresource/blob/2e19365/src/reducers/index.ts#L7)*
 
 #### Type declaration
 ▸(state: *`S` \| `undefined`*, action: *`A`*): `S`

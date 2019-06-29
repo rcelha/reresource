@@ -1,5 +1,5 @@
 
-#  redux-resource
+#  reresource
 
 ## Index
 

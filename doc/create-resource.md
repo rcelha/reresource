@@ -2,7 +2,7 @@
 
 ```jsx
 import React from 'react';
-import { createResource } from 'redux-resource';
+import { createResource } from 'reresource';
 
 class UserList extends React.Component {
   state = { fullName: '' };

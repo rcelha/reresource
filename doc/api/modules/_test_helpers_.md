@@ -1,4 +1,4 @@
-[redux-resource](../README.md) > ["test-helpers"](../modules/_test_helpers_.md)
+[reresource](../README.md) > ["test-helpers"](../modules/_test_helpers_.md)
 
 # External module: "test-helpers"
 
@@ -37,7 +37,7 @@
   'id'
 )
 
-*Defined in [test-helpers.ts:18](https://github.com/rcelha/redux-resource/blob/2e19365/src/test-helpers.ts#L18)*
+*Defined in [test-helpers.ts:18](https://github.com/rcelha/reresource/blob/2e19365/src/test-helpers.ts#L18)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 ▸ **setupStore**(): `Store`<`Object`, `AnyAction`> & `object`
 
-*Defined in [test-helpers.ts:11](https://github.com/rcelha/redux-resource/blob/2e19365/src/test-helpers.ts#L11)*
+*Defined in [test-helpers.ts:11](https://github.com/rcelha/reresource/blob/2e19365/src/test-helpers.ts#L11)*
 
 **Returns:** `Store`<`Object`, `AnyAction`> & `object`
 
@@ -60,7 +60,7 @@ ___
 
 ▸ **sleep**(milliseconds: *`number`*): `Promise`<`Object`>
 
-*Defined in [test-helpers.ts:7](https://github.com/rcelha/redux-resource/blob/2e19365/src/test-helpers.ts#L7)*
+*Defined in [test-helpers.ts:7](https://github.com/rcelha/reresource/blob/2e19365/src/test-helpers.ts#L7)*
 
 **Parameters:**
 
@@ -80,7 +80,7 @@ ___
 
 **service**: *`object`*
 
-*Defined in [test-helpers.ts:30](https://github.com/rcelha/redux-resource/blob/2e19365/src/test-helpers.ts#L30)*
+*Defined in [test-helpers.ts:30](https://github.com/rcelha/reresource/blob/2e19365/src/test-helpers.ts#L30)*
 
 <a id="service.fetchuser"></a>
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **fetchUser**(__namedParameters: *`object`*): `object`
 
-*Defined in [test-helpers.ts:31](https://github.com/rcelha/redux-resource/blob/2e19365/src/test-helpers.ts#L31)*
+*Defined in [test-helpers.ts:31](https://github.com/rcelha/reresource/blob/2e19365/src/test-helpers.ts#L31)*
 
 **Parameters:**
 
@@ -107,7 +107,7 @@ ___
 
 ▸ **fetchUsers**(__namedParameters?: *`object`*): `object`
 
-*Defined in [test-helpers.ts:35](https://github.com/rcelha/redux-resource/blob/2e19365/src/test-helpers.ts#L35)*
+*Defined in [test-helpers.ts:35](https://github.com/rcelha/reresource/blob/2e19365/src/test-helpers.ts#L35)*
 
 **Parameters:**
 
@@ -126,7 +126,7 @@ ___
 
 ▸ **postUser**(__namedParameters?: *`object`*): `object`
 
-*Defined in [test-helpers.ts:43](https://github.com/rcelha/redux-resource/blob/2e19365/src/test-helpers.ts#L43)*
+*Defined in [test-helpers.ts:43](https://github.com/rcelha/reresource/blob/2e19365/src/test-helpers.ts#L43)*
 
 **Parameters:**
 

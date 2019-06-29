@@ -2,7 +2,7 @@
 
 ```javascript
 import React from 'react';
-import { deleteResource } from 'redux-resource';
+import { deleteResource } from 'reresource';
 
 class UserList extends React.Component {
   onSaveClick = user => {
