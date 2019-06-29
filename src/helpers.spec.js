@@ -1,5 +1,4 @@
 import { getFrom, getQueries } from './helpers';
-import { setupStore } from './test-helpers';
 
 describe('helpers', () => {
   describe('getFrom', () => {

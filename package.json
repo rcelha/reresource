@@ -1,6 +1,6 @@
 {
   "name": "reresource",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.6",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "license": "MIT",
@@ -30,9 +30,15 @@
     "@babel/preset-env": "^7.4.1",
     "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.13",
+    "@types/react": "^16.8.22",
+    "@types/react-redux": "^7.1.1",
     "babel-jest": "^24.8.0",
     "gts": "^1.0.0",
     "jest": "^24.8.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.1",
     "typedoc": "^0.14.2",
     "typedoc-plugin-markdown": "^1.2.1",
     "typescript": "^3.5.1"
@@ -43,6 +49,8 @@
     "redux-saga": "^1.0.2"
   },
   "peerDependencies": {
-    "redux": "^4.0.1"
+    "react": "~16.8.6",
+    "react-redux": "~7.1.0",
+    "redux": "~4.0.1"
   }
 }

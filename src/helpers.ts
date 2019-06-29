@@ -33,9 +33,8 @@ export function getFrom(
 export function getQueries(
   state: { resources: object },
   resource: string,
-  queries: [object] = [{}]
+  queries: object[] = [{}]
 ): StructuredResource {
-  // return get(state.resources, `query.${resource}`, { ...INITIAL_RESOURCE });
   const res = get(state.resources, `query.${resource}`, {});
   return queries.reduce(
     (acc: StructuredResource, query: object) => {
