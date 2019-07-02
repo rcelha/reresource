@@ -1,5 +1,5 @@
 import produce from 'immer';
-import { get, set, omit } from 'lodash';
+import { get, set } from 'lodash';
 import {
   ResourceAction,
   ResourceSuccessAction,
@@ -13,6 +13,7 @@ import {
   RESOURCE_DEL_SUCCESS,
 } from '../action-types';
 import { INITIAL_RESOURCE } from './initial-resource';
+import { DataType } from '../types';
 
 export function reducer(
   state: { [k: string]: StructuredResource } = {},
@@ -69,7 +70,7 @@ export function reducer(
             resource.loading = false;
             resource.initialized = true;
             resource.error = null;
-            resource.data = (resource.data as [any]).filter(
+            resource.data = (<DataType[]>resource.data).filter(
               i => i.id !== action.payload.serviceParameters.id
             );
             resource.meta = action.payload.meta || null;
