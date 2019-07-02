@@ -69,4 +69,21 @@ describe('list-reducer', () => {
       });
     });
   });
+
+  describe('receiving a RESOURCE_DEL_SUCCESS  action', () => {
+    it('should remove that resource', () => {
+      const deleteUser = service.deleteUser(1);
+      const action = actions.deleteResourceSuccess(
+        'users',
+        deleteUser,
+        { id: 1 },
+        { cached: true }
+      );
+      const users = [{ id: 1 }, { id: 2 }, { id: 3 }];
+      const state = reducer({ users: { data: users } }, action);
+      expect(state.users).toMatchObject({
+        data: [{ id: 2 }, { id: 3 }],
+      });
+    });
+  });
 });

@@ -5,6 +5,7 @@ import {
   RESOURCE_LIST,
   RESOURCE_ADD,
   RESOURCE_ADD_SUCCESS,
+  RESOURCE_DEL,
 } from '../action-types';
 import * as actions from '../actions';
 import { ResourceAction, ResourceSuccessAction } from '../actions/types';
@@ -136,10 +137,40 @@ export function* createResource(action: ResourceAction) {
     );
   }
 }
+
+/**
+ * @ignore
+ */
+export function* deleteResource(action: ResourceAction) {
+  try {
+    const response = yield call(
+      action.payload.serviceFunction,
+      action.payload.serviceParameters
+    );
+    yield put(
+      actions.deleteResourceSuccess(
+        action.resourceType,
+        response,
+        action.payload.serviceParameters,
+        action.payload.resourceOptions
+      )
+    );
+  } catch (e) {
+    yield put(
+      actions.deleteResourceFailure(
+        action.resourceType,
+        e,
+        action.payload.serviceParameters,
+        action.payload.resourceOptions
+      )
+    );
+  }
+}
 export function* saga() {
   yield takeEvery(RESOURCE_GET, fetchResource);
   yield takeEvery(RESOURCE_LIST, listResources);
   yield takeEvery(RESOURCE_LIST_SUCCESS, cacheResources);
   yield takeEvery(RESOURCE_ADD, createResource);
   yield takeEvery(RESOURCE_ADD_SUCCESS, cacheCreatedResource);
+  yield takeEvery(RESOURCE_DEL, deleteResource);
 }

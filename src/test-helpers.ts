@@ -46,4 +46,8 @@ export const service = {
       : { id: 999 };
     return { data };
   },
+
+  deleteUser(id: string | number) {
+    return { data: null };
+  },
 };

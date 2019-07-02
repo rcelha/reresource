@@ -2,9 +2,10 @@ import {
   RESOURCE_GET,
   RESOURCE_GET_FAILURE,
   RESOURCE_GET_SUCCESS,
+  RESOURCE_DEL_SUCCESS,
 } from '../action-types';
 import produce from 'immer';
-import { get, setWith } from 'lodash';
+import { get, setWith, omit } from 'lodash';
 import {
   ResourceAction,
   ResourceSuccessAction,
@@ -55,6 +56,15 @@ export function reducer(
             loading: false,
             data: null,
             error: failAction.payload.error,
+          });
+          return;
+        case RESOURCE_DEL_SUCCESS:
+          const successDeleteAction = action as ResourceSuccessAction;
+          Object.assign(resource, {
+            loading: false,
+            error: null,
+            data: omit(resource.data, successDeleteAction.payload
+              .serviceParameters.id as string),
           });
           return;
         default:

@@ -1,5 +1,5 @@
 import produce from 'immer';
-import { get, set } from 'lodash';
+import { get, set, omit } from 'lodash';
 import {
   ResourceAction,
   ResourceSuccessAction,
@@ -10,6 +10,7 @@ import {
   RESOURCE_LIST,
   RESOURCE_LIST_SUCCESS,
   RESOURCE_LIST_FAILURE,
+  RESOURCE_DEL_SUCCESS,
 } from '../action-types';
 import { INITIAL_RESOURCE } from './initial-resource';
 
@@ -50,7 +51,6 @@ export function reducer(
             set(draft, resourceId, resource);
           }
           return;
-
         case RESOURCE_LIST_FAILURE:
           {
             action = action as ResourceFailureAction;
@@ -59,6 +59,25 @@ export function reducer(
             resource.error = action.payload.error;
             resource.data = null;
             resource.meta = null;
+            set(draft, resourceId, resource);
+          }
+          return;
+
+        case RESOURCE_DEL_SUCCESS:
+          {
+            action = action as ResourceSuccessAction;
+            resource.loading = false;
+            resource.initialized = true;
+            resource.error = null;
+            if (Array.isArray(resource.data)) {
+              resource.data = resource.data.filter(
+                i => i.id !== action.payload.serviceParameters.id
+              );
+            } else {
+              resource.data = omit(resource.data, action.payload
+                .serviceParameters.id as string);
+            }
+            resource.meta = action.payload.meta || null;
             set(draft, resourceId, resource);
           }
           return;
