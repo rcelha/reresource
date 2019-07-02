@@ -1,5 +1,4 @@
 import * as actionTypes from '../action-types';
-import { isObject } from 'lodash';
 import {
   ServiceFunction,
   ServiceOptions,

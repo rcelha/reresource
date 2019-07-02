@@ -59,13 +59,7 @@ export function reducer(
           });
           return;
         case RESOURCE_DEL_SUCCESS:
-          const successDeleteAction = action as ResourceSuccessAction;
-          Object.assign(resource, {
-            loading: false,
-            error: null,
-            data: omit(resource.data, successDeleteAction.payload
-              .serviceParameters.id as string),
-          });
+          omit(draft, resourceUri);
           return;
         default:
           return;

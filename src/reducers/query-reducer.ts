@@ -69,14 +69,9 @@ export function reducer(
             resource.loading = false;
             resource.initialized = true;
             resource.error = null;
-            if (Array.isArray(resource.data)) {
-              resource.data = resource.data.filter(
-                i => i.id !== action.payload.serviceParameters.id
-              );
-            } else {
-              resource.data = omit(resource.data, action.payload
-                .serviceParameters.id as string);
-            }
+            resource.data = (resource.data as [any]).filter(
+              i => i.id !== action.payload.serviceParameters.id
+            );
             resource.meta = action.payload.meta || null;
             set(draft, resourceId, resource);
           }

@@ -1,5 +1,5 @@
 import produce from 'immer';
-import { get, set, omit } from 'lodash';
+import { get, set } from 'lodash';
 import {
   ResourceAction,
   ResourceSuccessAction,
@@ -13,7 +13,7 @@ import {
   RESOURCE_DEL_SUCCESS,
 } from '../action-types';
 import { INITIAL_RESOURCE } from './initial-resource';
-import { SSL_OP_MICROSOFT_BIG_SSLV3_BUFFER } from 'constants';
+import { DataType } from '../types';
 
 export function reducer(
   state: { [k: string]: StructuredResource } = {},
@@ -54,7 +54,7 @@ export function reducer(
             successAction.payload.resourceOptions.append &&
             Array.isArray(resourceList.data)
           ) {
-            resourceList.data.push(...(successAction.payload.data as [object]));
+            resourceList.data.push(...(<DataType[]>successAction.payload.data));
           } else {
             resourceList.data = successAction.payload.data;
           }
@@ -76,16 +76,9 @@ export function reducer(
             loading: false,
             error: null,
           });
-          if (Array.isArray(resourceList.data)) {
-            resourceList.data = resourceList.data.filter(
-              i => i.id !== deletedResourceId
-            );
-          } else {
-            resourceList.data = omit(
-              resourceList.data,
-              deletedResourceId as string
-            );
-          }
+          resourceList.data = (<DataType[]>resourceList.data).filter(
+            i => i.id !== deletedResourceId
+          );
           return;
         default:
           return;

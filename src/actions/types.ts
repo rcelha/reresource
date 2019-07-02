@@ -1,5 +1,7 @@
+import { DataType } from '../types';
+
 export interface ServiceReturn {
-  data: object;
+  data: DataType | [DataType];
   meta?: object;
 }
 
@@ -32,7 +34,7 @@ export interface ResourceSuccessAction {
   type: string;
   resourceType: string;
   payload: {
-    data: object | [object];
+    data: DataType | [DataType];
     meta?: object;
     serviceParameters: ServiceOptions;
     resourceOptions: ResourceOptions;
