@@ -10,30 +10,41 @@ import {
 import { Dispatch } from 'redux';
 
 interface QueryProps {
-  queries: object[];
-  addQuery(q: object): void;
+  // queries: object[];
+  // addQuery(q: object): void;
   [propName: string]: any; // tslint:disable-line:no-any
 }
 
 /**
  * Inject query features into a given component
  */
-export const withQuery = (
-  resourceType: string,
-  serviceFunction: ServiceFunction,
-  serviceParameters: ServiceOptions = {},
-  resourceOptions: ResourceOptions = {}
-) => (WrappedComponent: ComponentType<QueryProps>) : ComponentType  => {
+export const withQuery = (options: {
+  resourceType: string;
+  serviceFunction: ServiceFunction;
+  serviceParameters?: ServiceOptions;
+  resourceOptions?: ResourceOptions;
+  name?: string;
+}) => (WrappedComponent: ComponentType<QueryProps>): ComponentType => {
+  const {
+    resourceType,
+    serviceFunction,
+    serviceParameters = {},
+    resourceOptions = {},
+    name = 'resource',
+  } = options;
+
   function mapStateToProps(state: { resources: object }, props: QueryProps) {
     const resource = getQueries(state, resourceType, props.queries);
     return {
-      resource,
+      [name]: resource,
     };
   }
 
   function mapDispatchToProps(dispatch: Dispatch, props: QueryProps) {
+    const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+    const loadResource = `load${capitalizedName}`;
     return {
-      listResources: (parameters: object) => {
+      [loadResource]: (parameters: object) => {
         const mergedParameters = {
           ...serviceParameters,
           ...parameters,
