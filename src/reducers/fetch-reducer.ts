@@ -59,7 +59,7 @@ export function reducer(
           });
           return;
         case RESOURCE_DEL_SUCCESS:
-          omit(draft, resourceUri);
+          delete draft[resourceUri];
           return;
         default:
           return;

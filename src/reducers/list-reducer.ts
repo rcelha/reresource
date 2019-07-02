@@ -72,10 +72,8 @@ export function reducer(
           const successDeleteAction = action as ResourceSuccessAction;
           const deletedResourceId =
             successDeleteAction.payload.serviceParameters.id;
-          Object.assign(resourceList, {
-            loading: false,
-            error: null,
-          });
+          resourceList.loading = false;
+          resourceList.error = null;
           resourceList.data = (<DataType[]>resourceList.data).filter(
             i => i.id !== deletedResourceId
           );
