@@ -1,3 +1,5 @@
+> WIP
+
 # Update resource
 
 ```jsx
@@ -14,7 +16,10 @@ class UserRepr extends React.Component {
   }
 
   onSubmit = () => {
-    this.props.updateResource('users', service.putUser, { id: this.props.userId, fullName: this.state.fullName });
+    this.props.updateResource('users', service.putUser, {
+      id: this.props.userId,
+      fullName: this.state.fullName,
+    });
   };
 
   onNameChange = e => {
@@ -24,7 +29,11 @@ class UserRepr extends React.Component {
   render() {
     return (
       <div>
-        <input type="text" onChange={this.onNameChange} value={this.state.fullName} />
+        <input
+          type="text"
+          onChange={this.onNameChange}
+          value={this.state.fullName}
+        />
         <button onClick={onSubmit}>save</button>
       </div>
     );
