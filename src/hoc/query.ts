@@ -1,4 +1,4 @@
-import React, { ComponentType } from 'react';
+import React, { ComponentType, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { listResources } from '../actions';
 import { getQueries } from '../helpers';
@@ -24,7 +24,7 @@ export const withQuery = (options: {
   serviceParameters?: ServiceOptions;
   resourceOptions?: ResourceOptions;
   name?: string;
-}) => (WrappedComponent: ComponentType<QueryProps>) => {
+}) => (WrappedComponent: ComponentType<QueryProps>): ComponentType => {
   const {
     resourceType,
     serviceFunction,
@@ -68,7 +68,7 @@ export const withQuery = (options: {
     mapDispatchToProps
   )(WrappedComponent);
 
-  return class QueryAwareComponent extends React.PureComponent {
+  return class QueryAwareComponent extends PureComponent {
     state = { queries: [] };
 
     addQuery = (q: object) =>

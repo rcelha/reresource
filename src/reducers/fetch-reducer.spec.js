@@ -80,4 +80,35 @@ describe('reducer', () => {
       });
     });
   });
+
+  describe('receiving a RESOURCE_DEL_SUCCESS  action', () => {
+    it('should remove that resource', () => {
+      const deleteUser = service.deleteUser(1);
+      const action = actions.deleteResourceSuccess(
+        'users',
+        deleteUser,
+        { id: 1 },
+        { cached: true }
+      );
+      const users = {
+        1: {
+          data: {
+            id: 1,
+          },
+        },
+        2: {
+          data: {
+            id: 2,
+          },
+        },
+      };
+      const state = reducer({ users }, action);
+      expect(state.users['1']).toMatchObject({
+        data: {},
+      });
+      expect(state.users['2']).toMatchObject({
+        data: { id: 2 },
+      });
+    });
+  });
 });

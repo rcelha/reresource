@@ -2,9 +2,10 @@ import {
   RESOURCE_GET,
   RESOURCE_GET_FAILURE,
   RESOURCE_GET_SUCCESS,
+  RESOURCE_DEL_SUCCESS,
 } from '../action-types';
 import produce from 'immer';
-import { get, setWith } from 'lodash';
+import { get, setWith, omit } from 'lodash';
 import {
   ResourceAction,
   ResourceSuccessAction,
@@ -56,6 +57,9 @@ export function reducer(
             data: null,
             error: failAction.payload.error,
           });
+          return;
+        case RESOURCE_DEL_SUCCESS:
+          delete draft[resourceUri];
           return;
         default:
           return;

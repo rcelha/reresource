@@ -10,8 +10,10 @@ import {
   RESOURCE_LIST,
   RESOURCE_LIST_SUCCESS,
   RESOURCE_LIST_FAILURE,
+  RESOURCE_DEL_SUCCESS,
 } from '../action-types';
 import { INITIAL_RESOURCE } from './initial-resource';
+import { DataType } from '../types';
 
 export function reducer(
   state: { [k: string]: StructuredResource } = {},
@@ -50,7 +52,6 @@ export function reducer(
             set(draft, resourceId, resource);
           }
           return;
-
         case RESOURCE_LIST_FAILURE:
           {
             action = action as ResourceFailureAction;
@@ -60,6 +61,16 @@ export function reducer(
             resource.data = null;
             resource.meta = null;
             set(draft, resourceId, resource);
+          }
+          return;
+
+        case RESOURCE_DEL_SUCCESS:
+          {
+            Object.values(get(draft, `${resourceType}`)).forEach(res => {
+              res.data = (<DataType[]>res.data).filter(
+                i => i.id !== action.payload.serviceParameters.id
+              );
+            });
           }
           return;
         default:

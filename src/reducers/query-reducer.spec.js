@@ -1,13 +1,13 @@
 import * as actions from '../actions';
-import { reducer } from './list-reducer';
+import { reducer } from './query-reducer';
 import { service } from '../test-helpers';
 
-describe('list-reducer', () => {
+describe('query-reducer', () => {
   describe('receiving a RESOURCE_LIST action', () => {
-    it('should return a "loading" state for a list of resources', () => {
+    it('should return a "loading" state for a query of resources', () => {
       const action = actions.listResources('users', service.fetchUsers);
       const state = reducer(undefined, action);
-      expect(state.users).toMatchObject({
+      expect(state.users['{}']).toMatchObject({
         data: null,
         loading: true,
         initialized: true,
@@ -16,43 +16,18 @@ describe('list-reducer', () => {
   });
 
   describe('receiving a RESOURCE_LIST_SUCCESS action', () => {
-    it('should return a list of resources, settings "loading" to false and "error" to null', () => {
+    it('should return a query of resources, settings "loading" to false and "error" to null', () => {
       const action = actions.listResourcesSuccess(
         'users',
         service.fetchUsers()
       );
       const state = reducer(undefined, action);
-      expect(state.users).toMatchObject({
+      expect(state.users['{}']).toMatchObject({
         data: [{ id: 1, name: 'Rodrigo' }, { id: 2, name: 'Fernanda' }],
         meta: { total: 2 },
         loading: false,
         initialized: true,
         error: null,
-      });
-    });
-
-    it('should return a list of resources with appended results', () => {
-      const action = actions.listResourcesSuccess(
-        'users',
-        service.fetchUsers(),
-        undefined,
-        { append: true }
-      );
-      let state = reducer(undefined, action);
-      state = reducer(
-        state,
-        actions.listResources('users', service.fetchUsers(), undefined, {
-          append: true,
-        })
-      );
-      state = reducer(state, action);
-      expect(state.users).toMatchObject({
-        data: [
-          { id: 1, name: 'Rodrigo' },
-          { id: 2, name: 'Fernanda' },
-          { id: 1, name: 'Rodrigo' },
-          { id: 2, name: 'Fernanda' },
-        ],
       });
     });
   });
@@ -62,7 +37,7 @@ describe('list-reducer', () => {
       const error = new Error();
       const action = actions.listResourcesFailure('users', error);
       const state = reducer(undefined, action);
-      expect(state.users).toMatchObject({
+      expect(state.users['{}']).toMatchObject({
         error,
         data: null,
         loading: false,
@@ -80,9 +55,16 @@ describe('list-reducer', () => {
         { cached: true }
       );
       const users = [{ id: 1 }, { id: 2 }, { id: 3 }];
-      const state = reducer({ users: { data: users } }, action);
-      expect(state.users).toMatchObject({
+      const users2 = [{ id: 1 }, { id: 5 }, { id: 6 }];
+      const state = reducer(
+        { users: { '{}': { data: users }, '{ page: 2 }': { data: users2 } } },
+        action
+      );
+      expect(state.users['{}']).toMatchObject({
         data: [{ id: 2 }, { id: 3 }],
+      });
+      expect(state.users['{ page: 2 }']).toMatchObject({
+        data: [{ id: 5 }, { id: 6 }],
       });
     });
   });

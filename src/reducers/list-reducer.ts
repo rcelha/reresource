@@ -10,8 +10,10 @@ import {
   RESOURCE_LIST,
   RESOURCE_LIST_SUCCESS,
   RESOURCE_LIST_FAILURE,
+  RESOURCE_DEL_SUCCESS,
 } from '../action-types';
 import { INITIAL_RESOURCE } from './initial-resource';
+import { DataType } from '../types';
 
 export function reducer(
   state: { [k: string]: StructuredResource } = {},
@@ -52,7 +54,7 @@ export function reducer(
             successAction.payload.resourceOptions.append &&
             Array.isArray(resourceList.data)
           ) {
-            resourceList.data.push(...(successAction.payload.data as [object]));
+            resourceList.data.push(...(<DataType[]>successAction.payload.data));
           } else {
             resourceList.data = successAction.payload.data;
           }
@@ -65,6 +67,16 @@ export function reducer(
             data: null,
             error: failAction.payload.error,
           });
+          return;
+        case RESOURCE_DEL_SUCCESS:
+          const successDeleteAction = action as ResourceSuccessAction;
+          const deletedResourceId =
+            successDeleteAction.payload.serviceParameters.id;
+          resourceList.loading = false;
+          resourceList.error = null;
+          resourceList.data = (<DataType[]>resourceList.data).filter(
+            i => i.id !== deletedResourceId
+          );
           return;
         default:
           return;

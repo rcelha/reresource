@@ -4,7 +4,6 @@ import { service } from '../test-helpers';
 
 describe('create-reducer', () => {
   const newUser = { name: 'New User' };
-
   describe('receiving a RESOURCE_ADD action', () => {
     it('should return a "loading" state for the new resource', () => {
       const action = actions.createResource('users', service.postUser, newUser);

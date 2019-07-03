@@ -10,9 +10,9 @@ import {
 } from './types';
 
 /**
- * Triggers the beginning of the resource creation flow
+ * Triggers the beginning of the resource deletion flow
  */
-export function createResource(
+export function deleteResource(
   resourceType: string,
   serviceFunction: ServiceFunction,
   serviceParameters: ServiceOptions,
@@ -20,7 +20,7 @@ export function createResource(
 ): ResourceAction {
   resourceOptions = resourceOptions || {};
   return {
-    type: actionTypes.RESOURCE_ADD,
+    type: actionTypes.RESOURCE_DEL,
     resourceType,
     payload: {
       serviceFunction,
@@ -33,7 +33,7 @@ export function createResource(
 /**
  * @ignore
  */
-export function createResourceSuccess(
+export function deleteResourceSuccess(
   resourceType: string,
   serviceResult: ServiceReturn,
   serviceParameters: ServiceOptions,
@@ -41,7 +41,7 @@ export function createResourceSuccess(
 ): ResourceSuccessAction {
   resourceOptions = resourceOptions || {};
   return {
-    type: actionTypes.RESOURCE_ADD_SUCCESS,
+    type: actionTypes.RESOURCE_DEL_SUCCESS,
     resourceType,
     payload: {
       data: serviceResult.data,
@@ -55,7 +55,7 @@ export function createResourceSuccess(
 /**
  * @ignore
  */
-export function createResourceFailure(
+export function deleteResourceFailure(
   resourceType: string,
   error: Error,
   serviceParameters: ServiceOptions,
@@ -63,7 +63,7 @@ export function createResourceFailure(
 ): ResourceFailureAction {
   resourceOptions = resourceOptions || {};
   return {
-    type: actionTypes.RESOURCE_ADD_FAILURE,
+    type: actionTypes.RESOURCE_DEL_FAILURE,
     resourceType,
     payload: {
       error,
