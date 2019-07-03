@@ -66,15 +66,11 @@ export function reducer(
 
         case RESOURCE_DEL_SUCCESS:
           {
-            action = action as ResourceSuccessAction;
-            resource.loading = false;
-            resource.initialized = true;
-            resource.error = null;
-            resource.data = (<DataType[]>resource.data).filter(
-              i => i.id !== action.payload.serviceParameters.id
-            );
-            resource.meta = action.payload.meta || null;
-            set(draft, resourceId, resource);
+            Object.values(get(draft, `${resourceType}`)).forEach(res => {
+              res.data = (<DataType[]>res.data).filter(
+                i => i.id !== action.payload.serviceParameters.id
+              );
+            });
           }
           return;
         default:
