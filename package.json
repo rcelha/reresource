@@ -13,7 +13,6 @@
     "type-check": "tsc --noEmit",
     "type-check:watch": "yarn type-check -- --watch",
     "build": "tsc",
-    "build:types": "tsc --emitDeclarationOnly",
     "docs": "typedoc",
     "test": "jest",
     "check": "gts check",
