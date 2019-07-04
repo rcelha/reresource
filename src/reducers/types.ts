@@ -7,4 +7,5 @@ export interface StructuredResource {
   data: DataType[] | DataType | null;
   meta: object | null;
   error: Error | null;
+  [k: string]: any;
 }

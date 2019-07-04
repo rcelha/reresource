@@ -57,7 +57,9 @@ describe('query-reducer', () => {
       const users = [{ id: 1 }, { id: 2 }, { id: 3 }];
       const users2 = [{ id: 1 }, { id: 5 }, { id: 6 }];
       const state = reducer(
-        { users: { '{}': { data: users }, '{ page: 2 }': { data: users2 } } },
+        {
+          users: { '{}': { data: users }, '{ page: 2 }': { data: users2 } },
+        } as any,
         action
       );
       expect(state.users['{}']).toMatchObject({

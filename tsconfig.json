@@ -3,7 +3,11 @@
   "compilerOptions": {
     "rootDir": "src/",
     "outDir": "build",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "jsx": "react",
+    "declaration": true,
+    "sourceMap": true
   },
-  "include": ["src/**/*.ts", "test/**/*.ts"]
+  "include": ["src/**/*.ts", "test/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
