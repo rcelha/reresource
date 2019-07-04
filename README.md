@@ -19,7 +19,27 @@ yarn add reresource
 
 ## Usage
 
-#Fetch resource
+### Configure your store
+
+```jsx
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import { reducer as resources, saga as resourceSaga } from "reresource";
+import createSagaMiddleware from "redux-saga";
+
+function rootReducer(state = {}, action) {
+  return state;
+}
+
+const sagaMiddleware = createSagaMiddleware();
+export default createStore(
+  combineReducers({ rootReducer, resources }),
+  applyMiddleware(sagaMiddleware)
+);
+sagaMiddleware.run(resourceSaga);
+```
+
+
+### Fetch resource
 ```jsx
 import React from 'react';
 import { getResource, fetchResource } from 'reresource';
@@ -45,7 +65,7 @@ const mapDispatchToProps = {
 };
 ```
 
-#Delete resource
+### Delete resource
 ```jsx
 import React from 'react';
 import { getResource, fetchResource, deleteResource } from 'reresource';
