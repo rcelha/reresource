@@ -9,7 +9,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/rcelha/reresource/blob/master/LICENSE)
 [![Twitter: rcelha](https://img.shields.io/twitter/follow/rcelha.svg?style=social)](https://twitter.com/rcelha)
 
-> Manage resources in redux sanely
+> Manage resources in redux maintaining a sane mind 
 
 ## Install
 
@@ -19,6 +19,7 @@ yarn add reresource
 
 ## Usage
 
+#Fetch resource
 ```jsx
 import React from 'react';
 import { getResource, fetchResource } from 'reresource';
@@ -41,6 +42,38 @@ const mapStateToProps = (state, props) => ({
 
 const mapDispatchToProps = {
   fetchResource,
+};
+```
+
+#Delete resource
+```jsx
+import React from 'react';
+import { getResource, fetchResource, deleteResource } from 'reresource';
+
+class UserRepr extends React.Component {
+  componentDidMount() {
+    this.props.fetchResource('users', service.fetchUser, 1);
+  }
+  
+  deleteResource() {
+    const { user } = this.props;
+    this.props.deleteResource('users', service.deleteUser, user.data.id);
+  }
+
+  render() {
+    if (this.props.user.error) return <div>Error loading user</div>;
+    if (this.props.user.loading) return <div>loading...</div>;
+    return <div>{this.props.user.data.fullName}<button onClick={deleteResource}>Delete</button></div>;
+  }
+}
+
+const mapStateToProps = (state, props) => ({
+  user: getResource(state, 'users', props.id),
+});
+
+const mapDispatchToProps = {
+  fetchResource,
+  deleteResource,
 };
 ```
 
