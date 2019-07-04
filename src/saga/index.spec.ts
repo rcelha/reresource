@@ -2,7 +2,7 @@ import * as actions from '../actions';
 import { sleep, setupStore, service } from '../test-helpers';
 
 describe('sagas', () => {
-  let store;
+  let store: any;
   beforeEach(() => {
     store = setupStore();
   });

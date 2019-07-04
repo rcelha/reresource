@@ -102,7 +102,7 @@ describe('reducer', () => {
           },
         },
       };
-      const state = reducer({ users }, action);
+      const state = reducer({ users } as any, action);
       expect(state.users['1']).toMatchObject({
         data: {},
       });

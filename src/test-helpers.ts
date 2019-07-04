@@ -27,7 +27,7 @@ export const USERS = keyBy(
   'id'
 );
 
-export const service = {
+export const service: any = {
   fetchUser({ id }: { id: number }) {
     return { data: USERS[id] };
   },

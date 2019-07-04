@@ -80,7 +80,7 @@ describe('list-reducer', () => {
         { cached: true }
       );
       const users = [{ id: 1 }, { id: 2 }, { id: 3 }];
-      const state = reducer({ users: { data: users } }, action);
+      const state = reducer({ users: { data: users } } as any, action);
       expect(state.users).toMatchObject({
         data: [{ id: 2 }, { id: 3 }],
       });

@@ -55,7 +55,7 @@ describe('create-reducer', () => {
   describe('receiving a RESOURCE_ADD_FAILURE  action', () => {
     it('should return an error', () => {
       const error = new Error();
-      const action = actions.createResourceFailure('users', error);
+      const action = (actions as any).createResourceFailure('users', error);
       const state = reducer(undefined, action);
       expect(state.users).toMatchObject({
         error,
