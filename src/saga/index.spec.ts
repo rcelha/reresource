@@ -12,7 +12,7 @@ describe('sagas', () => {
       const action = actions.fetchResource('users', service.fetchUser, 1);
       store.dispatch(action);
       await sleep(0);
-      expect(store.getState().byId.users['1']).toMatchObject({
+      expect(store.getState().resources.byId.users['1']).toMatchObject({
         data: { id: 1, name: 'Rodrigo' },
         loading: false,
         initialized: true,
@@ -25,7 +25,7 @@ describe('sagas', () => {
       const action = actions.listResources('users', service.fetchUsers);
       store.dispatch(action);
       await sleep(0);
-      expect(store.getState().list.users).toMatchObject({
+      expect(store.getState().resources.list.users).toMatchObject({
         data: [{ id: 1, name: 'Rodrigo' }, { id: 2, name: 'Fernanda' }],
         loading: false,
         initialized: true,
@@ -39,7 +39,7 @@ describe('sagas', () => {
       const action = actions.listResources('users', service.fetchUsers);
       store.dispatch(action);
       await sleep(0);
-      expect(store.getState().byId.users).toMatchObject({
+      expect(store.getState().resources.byId.users).toMatchObject({
         '1': {
           data: { id: 1, name: 'Rodrigo' },
           loading: false,
@@ -62,7 +62,7 @@ describe('sagas', () => {
       store.dispatch(action);
 
       await sleep(0);
-      expect(store.getState().mutation.users).toMatchObject({
+      expect(store.getState().resources.mutation.users).toMatchObject({
         data: {
           id: 999,
           name: 'Cherry',
@@ -77,7 +77,7 @@ describe('sagas', () => {
       store.dispatch(action);
 
       await sleep(0);
-      expect(store.getState().byId.users).toMatchObject({
+      expect(store.getState().resources.byId.users).toMatchObject({
         '999': {
           data: { id: 999, name: 'Cherry' },
         },
@@ -90,17 +90,17 @@ describe('sagas', () => {
       let action = actions.listResources('users', service.fetchUsers);
       store.dispatch(action);
       await sleep(0);
-      expect(store.getState().query).toMatchSnapshot();
+      expect(store.getState().resources.query).toMatchSnapshot();
 
       action = actions.listResources('users', service.fetchUsers, { p: 1 });
       store.dispatch(action);
       await sleep(0);
-      expect(store.getState().query).toMatchSnapshot();
+      expect(store.getState().resources.query).toMatchSnapshot();
 
       action = actions.listResources('users', service.fetchUsers, { p: 2 });
       store.dispatch(action);
       await sleep(0);
-      expect(store.getState().query).toMatchSnapshot();
+      expect(store.getState().resources.query).toMatchSnapshot();
     });
   });
 });

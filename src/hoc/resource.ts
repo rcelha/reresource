@@ -3,19 +3,24 @@ import { get, isObject, isFunction } from 'lodash';
 import { connect } from 'react-redux';
 import { getFrom } from '../helpers';
 import { fetchResource } from '../actions';
+import {
+  ServiceFunction,
+  ServiceOptions,
+  ResourceOptions,
+} from '../actions/types';
 
 interface GenericProps {
   [propName: string]: string;
 }
 
 export const withResource = (options: {
-  resourceType: any;
-  serviceFunction: any;
-  serviceParameters?: {};
-  resourceOptions?: {};
+  resourceType: string;
+  serviceFunction: ServiceFunction;
+  serviceParameters?: any;
+  resourceOptions?: ResourceOptions;
   name?: string;
   autoLoad?: boolean;
-  serviceParametersSelector: any;
+  serviceParametersSelector?: any;
 }) => (WrappedComponent: ComponentType<GenericProps>): ComponentType => {
   const {
     resourceType,
