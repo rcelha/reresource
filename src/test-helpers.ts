@@ -1,4 +1,4 @@
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { keyBy, chunk, values } from 'lodash';
 import { saga } from './index';
@@ -8,9 +8,13 @@ export const sleep = (milliseconds: number) => {
   return new Promise(resolve => setTimeout(resolve, milliseconds));
 };
 
-export const setupStore = () => {
+export const setupStore = (initialState?: any) => {
   const sagaMiddleware = createSagaMiddleware();
-  const store = createStore(reducer, applyMiddleware(sagaMiddleware));
+  const store = createStore(
+    combineReducers({ resources: reducer }),
+    initialState,
+    applyMiddleware(sagaMiddleware)
+  );
   sagaMiddleware.run(saga);
   return store;
 };
