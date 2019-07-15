@@ -8,6 +8,13 @@
     "type": "git",
     "url": "https://github.com/rcelha/reresource.git"
   },
+  "keywords": [
+    "redux",
+    "middleware",
+    "redux-middleware",
+    "rest",
+    "resource"
+  ],
   "scripts": {
     "prepublishOnly": "yarn build",
     "type-check": "tsc --noEmit",
