@@ -1,6 +1,6 @@
 {
   "name": "reresource",
-  "version": "1.0.0-rc.9",
+  "version": "1.0.0-rc.10",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "license": "MIT",
