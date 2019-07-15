@@ -1,13 +1,9 @@
-import React, { useEffect, ComponentType } from 'react';
+import React, { ComponentType } from 'react';
 import { get, isObject, isFunction } from 'lodash';
 import { connect } from 'react-redux';
 import { getFrom } from '../helpers';
 import { fetchResource } from '../actions';
-import {
-  ServiceFunction,
-  ServiceOptions,
-  ResourceOptions,
-} from '../actions/types';
+import { ServiceFunction, ResourceOptions } from '../actions/types';
 
 interface GenericProps {
   [propName: string]: string;
@@ -93,18 +89,36 @@ export const withResource = (options: {
       },
     };
   }
-  const ContainerComponent = (props: any) => {
-    const resource = props[name];
-    const { initialized } = resource;
-    const loadResource = props[loadResourceName];
-    useEffect(() => {
+
+  class ContainerComponent extends React.Component {
+    private autoLoadResource() {
+      const props: any = this.props;
+      const resource = props[name];
+      const { initialized } = resource;
+      const loadResource = props[loadResourceName];
       if (autoLoad && !initialized) {
         loadResource();
       }
-    }, [initialized, autoLoad]);
+    }
 
-    return React.createElement(WrappedComponent, { ...props });
-  };
+    componentDidMount() {
+      this.autoLoadResource();
+    }
+
+    componentDidUpdate(prevProps: any) {
+      const props: any = this.props;
+      if (
+        prevProps.initialized !== props.initialized ||
+        prevProps.autoLoad !== props.autoLoad
+      ) {
+        this.autoLoadResource();
+      }
+    }
+    render() {
+      const props: any = this.props;
+      return React.createElement(WrappedComponent, { ...props });
+    }
+  }
 
   return connect(
     mapStateToProps,
