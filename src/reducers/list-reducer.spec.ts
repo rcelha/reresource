@@ -23,7 +23,10 @@ describe('list-reducer', () => {
       );
       const state = reducer(undefined, action);
       expect(state.users).toMatchObject({
-        data: [{ id: 1, name: 'Rodrigo' }, { id: 2, name: 'Fernanda' }],
+        data: [
+          { id: 1, name: 'Rodrigo' },
+          { id: 2, name: 'Fernanda' },
+        ],
         meta: { total: 2 },
         loading: false,
         initialized: true,
@@ -83,6 +86,20 @@ describe('list-reducer', () => {
       const state = reducer({ users: { data: users } } as any, action);
       expect(state.users).toMatchObject({
         data: [{ id: 2 }, { id: 3 }],
+      });
+    });
+
+    it('should not fail when the removed resource is not present', () => {
+      const deleteUser = service.deleteUser(1);
+      const action = actions.deleteResourceSuccess(
+        'users',
+        deleteUser,
+        { id: 1 },
+        { cached: true }
+      );
+      const state = reducer({ users: { data: null } } as any, action);
+      expect(state.users).toMatchObject({
+        data: null,
       });
     });
   });

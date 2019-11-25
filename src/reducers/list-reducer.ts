@@ -69,6 +69,8 @@ export function reducer(
           });
           return;
         case RESOURCE_DEL_SUCCESS:
+          if (!resourceList.data) return;
+
           const successDeleteAction = action as ResourceSuccessAction;
           const deletedResourceId =
             successDeleteAction.payload.serviceParameters.id;

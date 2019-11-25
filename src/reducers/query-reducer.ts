@@ -66,7 +66,9 @@ export function reducer(
 
         case RESOURCE_DEL_SUCCESS:
           {
-            Object.values(get(draft, `${resourceType}`)).forEach(res => {
+            Object.values(get(draft, `${resourceType}`, {})).forEach(res => {
+              if (!res.data) return;
+
               res.data = (<DataType[]>res.data).filter(
                 i => i.id !== action.payload.serviceParameters.id
               );
