@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "immer": "3.1.2",
-    "lodash": "^4.17.13"
+    "lodash": "^4.17.19"
   },
   "peerDependencies": {
     "react": "~16.8.6",
